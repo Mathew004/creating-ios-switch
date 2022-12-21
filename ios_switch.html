@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		.switch{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  margin:10px 0;
+}
+.switch .switchBody{
+  background-color:#aaa;
+  border:solid 1px purple;
+  width:96px;
+  border-radius:47px;
+  box-shadow:inset 0 2px 4px 0 rgba(0,0,0,0.1)
+}
+.switch .switchBody .toggle{
+  width:48px;
+  height:48px;
+    background-color:white;
+  border-radius:50%;
+ box-shadow:inset 0 2px 4px 0 rgba(0,0,0,0.25)
+  border:solid 1px purple;
+  box-sizing:border-box;
+  }
+.switch.active .switchBody{
+  background-color:green;
+}
+.switch.active .switchBody .toggle{
+  transform:translateX(100%);
+}
+.switch label{
+  font-size:24px;
+  font-weight:bold ;
+  margin-left:15px;
+  font-family:sans-serif;
+}
+.switch input[type=checkbox]{
+  display:none;
+}
+	</style>
+
+</head>
+<body bgcolor="pink">
+	<h1> <b>ios-Switch</b></h1>
+<div class="switch">
+  <div class="switchBody">
+    <div class="toggle"></div>
+  </div>
+  <label><b><strong>do not show this notification again</strong></b></label>
+  <input type="checkbox" name ="hello">
+</div>
+<div class="switch active">
+  <div class="switchBody">
+    <div class="toggle"></div>
+  </div>
+  <label><b><strong>do not show this notification again</strong></b></label>
+  <input type="checkbox" name ="hello">
+</div>
+
+     <script type="text/javascript">
+     	let switches=document.querySelectorAll('.switch')
+for(var i= 0;i<switches.length;i++){
+  switches[i].addEventListener('click',function(event){
+    if(this.classList.contains('active')){
+      this .classList.remove('active');
+      this .querySelector('input[type=checkbox]').checked=false;
+      
+    }else{
+      this.classList.add('active');
+      this.querySelector('input[type=checkbox]').chechecked=true;
+    }
+  })
+  
+}
+     </script> 
+</body>
+</html>
